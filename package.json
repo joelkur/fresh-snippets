@@ -1,6 +1,7 @@
 {
     "name": "fresh-snippets",
     "displayName": "fresh-snippets",
+    "publisher": "joelkur",
     "description": "",
     "version": "0.0.1",
     "engines": {
