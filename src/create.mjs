@@ -59,4 +59,9 @@ inquirer
       path.join(__dirname(), "..", "templates", "details.json"),
       JSON.stringify(details, null, 2)
     );
+
+    fs.writeFileSync(
+      path.join(__dirname(), "..", "templates", `${identifier}.template`),
+      ""
+    );
   });
