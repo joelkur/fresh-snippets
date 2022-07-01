@@ -1,0 +1,6 @@
+/** @jsx h */
+import { h } from "preact";
+
+export default function ${1:Component}() {
+  return ${2:<div></div>};
+}

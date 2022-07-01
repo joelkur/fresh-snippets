@@ -1,0 +1,7 @@
+{
+  "component": {
+      "name": "Component",
+      "prefix": ["component", "comp"],
+      "description": "A page or island component"
+  }
+}
