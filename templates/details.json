@@ -1,4 +1,9 @@
 {
+  "api": {
+    "name": "Api route",
+    "prefix": ["api", "api-route"],
+    "description": "API route handler"
+  },
   "component": {
       "name": "Component",
       "prefix": ["component", "comp"],

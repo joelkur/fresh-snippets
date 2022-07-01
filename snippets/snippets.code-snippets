@@ -1,4 +1,21 @@
 {
+  "Api route": {
+    "prefix": [
+      "api",
+      "api-route"
+    ],
+    "description": "API route handler",
+    "body": [
+      "import { Handlers } from \"\\$fresh/server.ts\";",
+      "",
+      "export const handler: Handlers = {",
+      "  ${1:GET}(${2:req}) {",
+      "    ${3:return new Response()}",
+      "  },",
+      "};",
+      ""
+    ]
+  },
   "Component": {
     "prefix": [
       "component",
