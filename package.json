@@ -19,7 +19,7 @@
         ]
     },
     "scripts": {
-        "generate": "node generate.js"
+        "generate": "node src/generate.js"
     },
     "repository": {
         "type": "git",

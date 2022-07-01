@@ -1,9 +1,14 @@
 const path = require("path");
 const fs = require("fs");
-const templates = require("./templates/details.json");
+const templates = require("../templates/details.json");
 
-const TEMPLATES_DIRECTORY = path.join(__dirname, "templates");
-const OUTPUT_PATH = path.join(__dirname, "snippets", "snippets.code-snippets");
+const TEMPLATES_DIRECTORY = path.join(__dirname, "..", "templates");
+const OUTPUT_PATH = path.join(
+  __dirname,
+  "..",
+  "snippets",
+  "snippets.code-snippets"
+);
 
 function generateSnippet(file) {
   const fileBasename = path.basename(file, ".template");
@@ -11,7 +16,7 @@ function generateSnippet(file) {
 
   const fileContents = fs.readFileSync(
     path.join(TEMPLATES_DIRECTORY, file),
-    "utf8",
+    "utf8"
   );
 
   const body = fileContents.split("\n");
