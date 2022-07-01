@@ -20,5 +20,9 @@
     },
     "scripts": {
         "generate": "node generate.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/joelkur/fresh-snippets.git"
     }
 }
