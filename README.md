@@ -1,65 +1,29 @@
-# fresh-snippets README
+# fresh-snippets
 
-This is the README for your extension "fresh-snippets". After writing up a brief description, we recommend including the following sections.
+Visual Studio Code snippets for Fresh web framework
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Currently has the following snippets:
 
-For example if there is an image subfolder under your extension project workspace:
+| Prefix | Description |
+| --- | --- |
+| `api`, `api-route` | Outputs an [API route](https://fresh.deno.dev/docs/concepts/routes) |
+| `comp`, `component` | Outputs snippet that can be used for [page](https://fresh.deno.dev/docs/getting-started/create-a-route) or [island](https://fresh.deno.dev/docs/concepts/islands) component |
+| `page`, `page-handler`  | Outputs a page component that also has a custom API handler |
 
-\!\[feature X\]\(images/feature-x.png\)
+## Adding snippets
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+1. Create a template for the snippet under `templates` directory
+    - The file name must end with `.template`
+2. Add details of the snippet as a new entry to `templates/details.json` using the below format:
+    ```json
+    {
+      "name": "Name of the snippet",
+      "prefix": ["prefixes", "for", "this", "snippet"],
+      "description": "Description of the snippet"
+    }
+    ```
+3. Run `npm run generate`
+    - This generates a new `snippets/snippets.code-snippets` file from the template files and `details.json`
+4. Commit the changes
