@@ -20,14 +20,17 @@ function generateSnippet(file) {
 
 function main() {
   const output = {};
-  for (
-    const file of fs.readdirSync(TEMPLATES_DIRECTORY).filter((file) =>
-      file.endsWith(".template")
+
+  fs.readdirSync(TEMPLATES_DIRECTORY)
+    .filter((file) => file.endsWith(".template"))
+    .filter((file) =>
+      Object.keys(templates).includes(path.basename(file, ".template"))
     )
-  ) {
-    const [name, details] = generateSnippet(file);
-    output[name] = details;
-  }
+    .forEach((file) => {
+      const [name, details] = generateSnippet(file);
+      output[name] = details;
+    });
+
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2));
 }
 
